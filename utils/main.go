@@ -13,6 +13,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"unicode"
 
 	"github.com/faiface/beep"
 	"github.com/faiface/beep/mp3"
@@ -388,4 +389,18 @@ func GetClonedDog(dogs map[string]structs.Dog, key string) structs.Dog {
 		selectedDog.Race,
 	)
 	return clonedDog
+}
+
+func CapitalizeFirstLetter(s string) string {
+	if len(s) == 0 {
+		return s
+	}
+
+	firstChar := string(unicode.ToUpper(rune(s[0])))
+
+	if len(s) > 1 {
+		return firstChar + strings.ToLower(s[1:])
+	}
+
+	return firstChar
 }

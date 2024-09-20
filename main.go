@@ -67,6 +67,7 @@ func CreateGameState() {
 	utils.Writeln("")
 	utils.Write("Nom : ")
 	name := utils.WaitForInput()
+	name = utils.CapitalizeFirstLetter(name)
 	utils.Writeln("")
 	utils.Writeln("Bienvenue " + name + " !")
 	utils.Writeln("Nous allons maintenant choisir ton premier chien.")
